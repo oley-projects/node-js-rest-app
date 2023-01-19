@@ -1,0 +1,23 @@
+{
+  "name": "node-js-rest-app",
+  "version": "1.0.0",
+  "description": "Node.js REST Application, Back End",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oley-projects/node-js-rest-app.git"
+  },
+  "author": "Oley",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  }
+}
