@@ -3,13 +3,15 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv');
 const multer = require('multer');
 
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
 
-const MONGODB_URI = dotenv.parsed.MONGODB_URI;
+const dotenvconf = dotenv.config();
+
+const MONGODB_URI = dotenvconf.parsed.MONGODB_URI;
 
 const app = express();
 
@@ -28,7 +30,7 @@ const fileFilter = (req, file, cb) => {
   if (( file.mimetype === 'image/png' ||
         file.mimetype === 'image/jpg' ||
         file.mimetype === 'image/jpeg') &&
-        fileSize <= 782810 )
+        fileSize <= 1048576 )
   {
     cb(null, true);
   } else {
